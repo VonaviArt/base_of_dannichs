@@ -46,37 +46,6 @@ lab1_steam/
 | `friendships` | дружба со статусом `pending`, `accepted` или `blocked` |
 | `wishlist_entries` | списки желаемого |
 
-## 🚀 Быстрый старт
-
-### Вариант 1. Одной командой (нужен Docker)
-
-```bash
-./run_tests.sh
-```
-
-Скрипт поднимает чистый Postgres, применяет `schema.sql`, `seed.sql`, `tests.sql` в фиксированном порядке и печатает отчёт:
-
-```text
-4/4 Тесты (sql/tests.sql)
-  ✔ дубликат username отклонён
-  ✔ дубликат email отклонён
-  ...
-Итог: 20 из 20 проверок пройдено
-```
-
-После прогона контейнер удаляется, ваши базы не затрагиваются. Код выхода `0` значит, что всё прошло, иначе тесты провалены.
-
-### Вариант 2. Локальный `psql`
-
-```bash
-createdb steam_test
-psql -d steam_test -v ON_ERROR_STOP=1 -f sql/schema.sql -f sql/seed.sql -f sql/tests.sql
-```
-
-> ⚠️ `schema.sql` начинается с `DROP SCHEMA steam CASCADE`, поэтому запускайте его в отдельной базе, а не в рабочей.
-
-Если `psql` пишет `роль "..." не существует`, создайте роль: `sudo -u postgres createuser -s $USER`.
-
 ## 🧪 Что проверяют тесты
 
 | Группа | Проверки |
