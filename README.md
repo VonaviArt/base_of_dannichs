@@ -31,22 +31,8 @@ lab1_steam/
 
 ## 🧩 Модель данных
 
-```mermaid
-erDiagram
-    users ||--o{ purchases : "делает"
-    users ||--o{ library_entries : "владеет"
-    users ||--o{ reviews : "пишет"
-    users ||--o{ wishlist_entries : "желает"
-    users ||--o{ friendships : "дружит"
-    companies ||--o{ games : "разрабатывает / издаёт"
-    games ||--o{ game_genres : ""
-    genres ||--o{ game_genres : ""
-    games ||--o{ purchase_items : ""
-    purchases ||--o{ purchase_items : "содержит"
-    games ||--o{ library_entries : ""
-    games ||--o{ reviews : ""
-    games ||--o{ wishlist_entries : ""
-```
+<img width="1119" height="1280" alt="image" src="https://github.com/user-attachments/assets/f2f0df46-60ae-494d-b079-b8dc7511ece6" />
+
 
 | Таблица | Назначение |
 |---|---|
